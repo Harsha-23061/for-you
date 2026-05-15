@@ -16,19 +16,21 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
       background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fad0c4 100%);
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       position: relative;
+      padding: 40px 15px;
     }
 
     .container {
       position: relative;
       z-index: 2;
-      width: 90%;
+      width: 100%;
       max-width: 850px;
       animation: fadeIn 2s ease;
     }
@@ -37,10 +39,11 @@
       background: rgba(255,255,255,0.18);
       backdrop-filter: blur(12px);
       border-radius: 30px;
-      padding: 50px 40px;
+      padding: 40px 25px;
       text-align: center;
       box-shadow: 0 10px 40px rgba(0,0,0,0.25);
       border: 1px solid rgba(255,255,255,0.3);
+      margin-top: 20px;
     }
 
     .birthday-text {
@@ -98,26 +101,48 @@
     }
 
     .floating {
-      position: absolute;
+      position: fixed;
       font-size: 30px;
       animation: float 6s linear infinite;
       opacity: 0.8;
+      z-index: 1;
     }
 
-    .floating:nth-child(1) { left: 10%; animation-duration: 7s; }
-    .floating:nth-child(2) { left: 25%; animation-duration: 9s; }
-    .floating:nth-child(3) { left: 40%; animation-duration: 6s; }
-    .floating:nth-child(4) { left: 60%; animation-duration: 8s; }
-    .floating:nth-child(5) { left: 80%; animation-duration: 10s; }
+    .floating:nth-child(1) {
+      left: 10%;
+      animation-duration: 7s;
+    }
+
+    .floating:nth-child(2) {
+      left: 25%;
+      animation-duration: 9s;
+    }
+
+    .floating:nth-child(3) {
+      left: 40%;
+      animation-duration: 6s;
+    }
+
+    .floating:nth-child(4) {
+      left: 60%;
+      animation-duration: 8s;
+    }
+
+    .floating:nth-child(5) {
+      left: 80%;
+      animation-duration: 10s;
+    }
 
     @keyframes float {
       0% {
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
       }
+
       20% {
         opacity: 1;
       }
+
       100% {
         transform: translateY(-120vh) rotate(360deg);
         opacity: 0;
@@ -128,6 +153,7 @@
       from {
         text-shadow: 0 0 10px white, 0 0 20px #ff4081;
       }
+
       to {
         text-shadow: 0 0 20px white, 0 0 40px #ff4081;
       }
@@ -138,6 +164,7 @@
         opacity: 0;
         transform: scale(0.8);
       }
+
       to {
         opacity: 1;
         transform: scale(1);
@@ -145,9 +172,17 @@
     }
 
     @keyframes beat {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .music-btn {
@@ -169,20 +204,36 @@
     }
 
     @media(max-width:768px) {
+
       .birthday-text {
-        font-size: 38px;
+        font-size: 34px;
+        line-height: 1.3;
       }
 
       .name {
-        font-size: 30px;
+        font-size: 28px;
+        margin-top: 10px;
+      }
+
+      .age {
+        font-size: 18px;
+        padding: 10px 20px;
       }
 
       .message {
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 1.8;
       }
+
+      .music-btn {
+        width: 100%;
+        font-size: 16px;
+      }
+
     }
   </style>
 </head>
+
 <body>
 
   <div class="floating">🎈</div>
@@ -192,39 +243,67 @@
   <div class="floating">💖</div>
 
   <div class="container">
+
     <div class="card">
 
-      <div class="birthday-text">🎉 Happy Birthday 🎂</div>
-
-      <div class="name">Nandini 💫</div>
-
-      <div class="age">Welcome To 23 ✨</div>
-
-      <div class="message">
-        Wishing you a year filled with endless happiness, beautiful memories, success, and peace. 🌸<br><br>
-
-        I hope <span class="highlight">all your wishes and dreams</span> come true this year and life surprises you with countless reasons to smile every single day. ✨<br><br>
-
-        All the very best for your academics 📚 — you are genuinely talented, hardworking, and capable of achieving amazing things. No matter what comes your way, you’ll definitely do well and shine with your knowledge and dedication. 🌟<br><br>
-
-        Keep smiling, keep growing, and keep being the wonderful person you are. 💖
+      <div class="birthday-text">
+        🎉 Happy Birthday 🎂
       </div>
 
-      <button class="music-btn" onclick="playMusic()">🎵 Surprise Music</button>
+      <div class="name">
+        Nandini 💫
+      </div>
+
+      <div class="age">
+        Welcome To 23 ✨
+      </div>
+
+      <div class="message">
+
+        Wishing you a year filled with endless happiness,
+        beautiful memories, success, and peace. 🌸
+        <br><br>
+
+        I hope
+        <span class="highlight">
+          all your wishes and dreams
+        </span>
+        come true this year and life surprises you with countless
+        reasons to smile every single day. ✨
+        <br><br>
+
+        All the very best for your academics 📚 —
+        you are genuinely talented, hardworking,
+        and capable of achieving amazing things.
+        No matter what comes your way,
+        you’ll definitely do well and shine with your knowledge
+        and dedication. 🌟
+        <br><br>
+
+        Keep smiling, keep growing,
+        and keep being the wonderful person you are. 💖
+
+      </div>
+
+      <button class="music-btn" onclick="playMusic()">
+        🎵 Play Special Song
+      </button>
 
       <div class="footer">
         Made with <span class="heart">❤</span> specially for you
       </div>
 
     </div>
+
   </div>
 
-  <!-- Custom Birthday Song -->
+  <!-- Birthday Song -->
   <audio id="birthdaySong">
     <source src="queen-of-tears-love-you-with-all-my-heart.mp3" type="audio/mpeg">
   </audio>
 
   <script>
+
     function playMusic() {
       const song = document.getElementById('birthdaySong');
       song.play();
@@ -233,6 +312,7 @@
     setTimeout(() => {
       alert('✨ Wishing You Endless Happiness, Smiles & Success Always 🎂');
     }, 2500);
+
   </script>
 
 </body>
