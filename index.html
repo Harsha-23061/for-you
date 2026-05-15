@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Nandini 🎉</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fad0c4 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 850px;
+      animation: fadeIn 2s ease;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .birthday-text {
+      font-size: 55px;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      margin-bottom: 15px;
+      animation: glow 2s infinite alternate;
+    }
+
+    .name {
+      font-size: 42px;
+      color: #fff;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .age {
+      display: inline-block;
+      padding: 10px 25px;
+      background: white;
+      color: #ff4081;
+      border-radius: 50px;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .message {
+      font-size: 22px;
+      line-height: 1.9;
+      color: white;
+      margin-top: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .highlight {
+      color: #fff700;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 35px;
+      font-size: 18px;
+      color: white;
+      opacity: 0.9;
+    }
+
+    .heart {
+      color: red;
+      animation: beat 1s infinite;
+      display: inline-block;
+    }
+
+    .floating {
+      position: absolute;
+      font-size: 30px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    .floating:nth-child(1) { left: 10%; animation-duration: 7s; }
+    .floating:nth-child(2) { left: 25%; animation-duration: 9s; }
+    .floating:nth-child(3) { left: 40%; animation-duration: 6s; }
+    .floating:nth-child(4) { left: 60%; animation-duration: 8s; }
+    .floating:nth-child(5) { left: 80%; animation-duration: 10s; }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px white, 0 0 20px #ff4081;
+      }
+      to {
+        text-shadow: 0 0 20px white, 0 0 40px #ff4081;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .music-btn {
+      margin-top: 30px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #ff4081;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .music-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @media(max-width:768px) {
+      .birthday-text {
+        font-size: 38px;
+      }
+
+      .name {
+        font-size: 30px;
+      }
+
+      .message {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating">🎈</div>
+  <div class="floating">✨</div>
+  <div class="floating">🎂</div>
+  <div class="floating">🎉</div>
+  <div class="floating">💖</div>
+
+  <div class="container">
+    <div class="card">
+      <div class="birthday-text">🎉 Happy Birthday 🎂</div>
+
+      <div class="name">Nandini 💫</div>
+
+      <div class="age">Welcome To 23 ✨</div>
+
+      <div class="message">
+        Wishing you a year filled with endless happiness, beautiful memories, success, and peace. 🌸<br><br>
+
+        I hope <span class="highlight">all your wishes and dreams</span> come true this year and life surprises you with countless reasons to smile every single day. ✨<br><br>
+
+        All the very best for your academics 📚 — you are genuinely talented, hardworking, and capable of achieving amazing things. No matter what comes your way, you’ll definitely do well and shine with your knowledge and dedication. 🌟<br><br>
+
+        Keep smiling, keep growing, and keep being the wonderful person you are. 💖
+      </div>
+
+      <button class="music-btn" onclick="playMusic()">🎵 Surprise Music</button>
+
+      <div class="footer">
+        Made with <span class="heart">❤</span> specially for you
+      </div>
+    </div>
+  </div>
+
+  <audio id="birthdaySong">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playMusic() {
+      const song = document.getElementById('birthdaySong');
+      song.play();
+    }
+
+    setTimeout(() => {
+      alert('🎉 Surprise Nandini! Wishing you the happiest birthday and an amazing year ahead ✨');
+    }, 2500);
+  </script>
+
+</body>
+</html>
